@@ -51,176 +51,325 @@ svg {
   height: auto;
   max-width: 100%;
 }
-a{
-    color: var(--text-100);
+a {
+  color: var(--text-100);
+}
+i {
+  cursor: pointer;
 }
 
 /* Empiezan mis estilos propios */
 body {
-    font-family: "Playfair Display", serif;
-    min-height: 100dvh;
-    background-color: var(--bg-100);
-    display: flex;
-    flex-flow: column wrap;
+  font-family: "Playfair Display", serif;
+  min-height: 100dvh;
+  background-color: var(--bg-100);
+  display: flex;
+  flex-flow: column wrap;
 }
 
 /* Estilos header */
-header{
+header {
+  width: 100%;
+  height: 100px;
+  background-color: var(--primary-100);
+  display: flex;
+
+  nav {
     width: 100%;
-    height: 100px;
-    background-color: var(--primary-100);
-    display: flex;
-
-    nav{
-        width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin: 0 30px;
-        cursor: pointer;
-        color: var(--text-100);
-
-        .nav-left{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 40px;
-            gap: 10px;
-            i{
-                font-size: 50px;
-            }
-            h1{
-                background-image: linear-gradient(to right, var(--text-100), var(--accent-100), var(--primary-200));
-                background-clip: text;
-                color: transparent;
-                font-weight: 900;
-            }
-
-        }
-        .nav-center{
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 24px;
-            gap: 40px;
-            font-weight: 600;
-            a{
-                color: var(--text-100);
-                &:hover{
-                    border-bottom: 5px solid var(--text-100);
-                }
-            }
-        }
-        .nav-right{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
-            font-size: 20px;
-            .search-bar{
-                background-color: var(--primary-300);
-                border-radius: 10px;
-                input{
-                    background-color: var(--primary-300);
-                    border: none;
-                    outline: none;
-                    border-radius: 10px;
-                    padding: 5px;
-                    width: 200px;
-                    color: var(--text-100);
-                    &::placeholder{
-                        color: var(--text-100);
-                    }
-                }
-                i{
-                    margin-right: 20px;
-                }
-            }
-            a{
-                font-size: 30px;
-                color: var(--text-100);
-            }
-        }
-    }
-}
-
-/* Estilos seccion principal */
-.principal{
-    flex: 1;
-    display: flex;
-    flex-flow: row wrap;
-    aside{
-        flex: 1;
-        border: 1px solid red;
-        display: flex;
-        flex-flow: column wrap;
-        gap: 30px;
-        align-items: center;
-        &>a{
-            margin-top: 10px;
-            font-size: 30px;
-        }
-    }
-    main{
-        flex: 5;
-        border: 1px solid white;
-        display: flex;
-        flex-flow: column wrap;
-        .productos1{
-            flex: 1;
-            border: 1px solid red;
-        }
-        .productos2{
-            flex: 1;
-            border: 1px solid blue;
-        }
-        .productos3{
-            flex: 1;
-            border: 1px solid yellow;
-        }
-        .productos4{
-            flex: 1;
-            border: 1px solid black;
-        }
-        .productos5{
-            flex: 1;
-            border: 1px solid white;
-        }
-    }
-}
-
-/* Estilos del footer */
-footer{
-    width: 100%;
-    height: 50px;
+    height: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--bg-200);
+    margin: 0 30px;
     color: var(--text-100);
-    font-size: 14px;
-    .foot-left{
-        display: flex;
-        margin-left: 30px;
-        
-        a{
-            background-image: linear-gradient(to right, var(--text-100), var(--accent-100), var(--primary-200));
-            background-clip: text;
-            color: transparent;
-            font-weight: 900;
+
+    .nav-left {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 40px;
+      gap: 10px;
+      cursor: pointer;
+      i {
+        font-size: 50px;
+      }
+      h1 {
+        background-image: linear-gradient(
+          to right,
+          var(--text-100),
+          var(--accent-100),
+          var(--primary-200)
+        );
+        background-clip: text;
+        color: transparent;
+        font-weight: 900;
+      }
+    }
+    .nav-center {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 24px;
+      gap: 40px;
+      font-weight: 600;
+      a {
+        color: var(--text-100);
+        &:hover {
+          border-bottom: 5px solid var(--text-100);
         }
+      }
     }
-    .foot-center{
-        display: flex;
-        gap: 30px;
-        cursor: pointer;
-    }
-    .foot-right{
-        display: flex;
-        gap: 10px;
-        margin-right: 30px;
+    .nav-right {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      font-size: 20px;
+      .search-bar {
+        background-color: var(--primary-300);
+        border-radius: 10px;
+        input {
+          background-color: var(--primary-300);
+          border: none;
+          outline: none;
+          border-radius: 10px;
+          padding: 5px;
+          width: 200px;
+          color: var(--text-100);
+          &::placeholder {
+            color: var(--text-100);
+          }
+        }
+        i {
+          margin-right: 20px;
+        }
+      }
+      a {
         font-size: 30px;
-        cursor: pointer;
+        color: var(--text-100);
+      }
     }
+  }
+}
+
+/* Estilos seccion principal */
+.principal {
+  flex: 1;
+  display: flex;
+  flex-flow: row wrap;
+  aside {
+    flex: 1;
+    border: 1px solid red;
+    display: flex;
+    flex-flow: column wrap;
+    gap: 30px;
+    align-items: center;
+    & > a {
+      margin-top: 10px;
+      font-size: 30px;
+    }
+  }
+  main {
+    flex: 5;
+    border: 1px solid white;
+    display: flex;
+    flex-flow: column wrap;
+    padding: 20px;
+    section {
+      flex: 1;
+      display: flex;
+      flex-flow: column wrap;
+      gap: 20px 0;
+    }
+    /*  */
+    .mas-vendidos {
+      .encabezado {
+        display: flex;
+        align-items: baseline;
+        gap: 10px;
+        h3 {
+          color: var(--text-100);
+          font-size: 40px;
+        }
+        a {
+          color: var(--text-200);
+          font-size: 14px;
+          text-decoration: underline;
+        }
+      }
+
+      article {
+        display: flex;
+        padding: 20px;
+        gap: 10px;
+        .producto {
+          flex: 1;
+          max-width: 300px;
+          border: 1px solid var(--primary-300);
+          background-color: var(--bg-300);
+          display: flex;
+          flex-flow: column wrap;
+          justify-content: center;
+          align-items: center;
+          gap: 10px;
+          img {
+            height: 150px;
+            width: 150px;
+            object-fit: contain;
+          }
+          p {
+            color: var(--text-100);
+            font-size: 18px;
+            text-align: center;
+          }
+          span {
+            color: var(--text-100);
+            font-size: 30px;
+          }
+          .acciones {
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+            margin: 10px 0;
+            i {
+              color: var(--text-200);
+              font-size: 20px;
+            }
+          }
+        }
+      }
+    }
+    /*  */
+    .oferta-del-dia {
+      .encabezado {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        h3 {
+          color: var(--text-100);
+          font-size: 40px;
+        }
+        a {
+          color: var(--text-200);
+          font-size: 14px;
+          text-decoration: underline;
+        }
+      }
+
+      article {
+        display: flex;
+        padding: 20px;
+        gap: 10px;
+        .producto {
+          flex: 1;
+          max-width: 300px;
+          border: 1px solid var(--primary-300);
+          background-color: var(--bg-300);
+          display: flex;
+          flex-flow: column wrap;
+          justify-content: center;
+          align-items: flex-start;
+          gap: 10px;
+          padding-left: 20px;
+          img {
+            /* width: 150px; */
+            height: 150px;
+            object-fit: contain;
+            align-self: center;
+          }
+          .resaltar {
+            background-color: var(--accent-200);
+            font-weight: bold;
+            width: 170px;
+            height: 30px;
+            text-align: center;
+            align-content: center;
+            border-radius: 5px;
+            color: var(--primary-300);
+            font-size: 18px;
+            margin: 10px 50px 30px;
+          }
+          h5 {
+            text-decoration: line-through;
+            color: var(--text-200);
+            font-size: 14px;
+          }
+          .precio {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            h4 {
+              color: var(--accent-100);
+              font-size: 30px;
+              font-weight: 900;
+            }
+            h6 {
+              color: var(--text-200);
+              font-size: 16px;
+            }
+          }
+          p {
+            color: var(--text-200);
+            font-size: 14px;
+          }
+
+          .acciones {
+            display: flex;
+            align-items: baseline;
+            align-self: center;
+            gap: 10px;
+            margin: 10px 0;
+            i {
+              color: var(--text-200);
+              font-size: 20px;
+            }
+            span {
+              color: var(--text-100);
+              font-size: 30px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Estilos del footer */
+footer {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--bg-200);
+  color: var(--text-100);
+  font-size: 14px;
+  .foot-left {
+    display: flex;
+    margin-left: 30px;
+
+    a {
+      background-image: linear-gradient(
+        to right,
+        var(--text-100),
+        var(--accent-100),
+        var(--primary-200)
+      );
+      background-clip: text;
+      color: transparent;
+      font-weight: 900;
+    }
+  }
+  .foot-center {
+    display: flex;
+    gap: 30px;
+    cursor: pointer;
+  }
+  .foot-right {
+    display: flex;
+    gap: 10px;
+    margin-right: 30px;
+    font-size: 30px;
+    cursor: pointer;
+  }
 }
