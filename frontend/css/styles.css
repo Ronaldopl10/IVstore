@@ -62,6 +62,7 @@ i {
 body {
   font-family: "Playfair Display", serif;
   min-height: 100dvh;
+  /* width: 100%; */
   background-color: var(--bg-100);
   display: flex;
   flex-flow: column wrap;
@@ -156,19 +157,12 @@ header {
 .principal {
   flex: 1;
   display: flex;
-  flex-flow: row wrap;
-  aside {
-    flex: 1;
-    border: 1px solid red;
-    display: flex;
-    flex-flow: column wrap;
-    gap: 30px;
-    align-items: center;
-    & > a {
-      margin-top: 10px;
-      font-size: 30px;
-    }
-  }
+  /* flex-flow: row wrap; */
+
+  /* estilos del aside */
+
+
+  /* estilos del main */
   main {
     flex: 5;
     border: 1px solid white;
@@ -260,6 +254,7 @@ header {
         display: flex;
         padding: 20px;
         gap: 10px;
+        flex-wrap: wrap;
         .producto {
           flex: 1;
           max-width: 300px;
@@ -331,6 +326,63 @@ header {
         }
       }
     }
+    /*  */
+    .categorias{
+      border: 2px solid red;
+      .encabezado {
+        display: flex;
+        flex-direction: row;
+        align-items: baseline;
+        gap: 10px;
+        h3 {
+          color: var(--text-100);
+          font-size: 40px;
+        }
+        a {
+          color: var(--text-200);
+          font-size: 14px;
+          text-decoration: underline;
+        }
+      }
+      article{
+        display: flex;
+        flex-wrap: wrap;
+        /* padding: 20px; */
+        gap: 10px;
+        .tarjeta{
+          flex: 1 1 300px;
+          max-width: 300px;
+          border: 1px solid var(--primary-300);
+          background-color: var(--bg-300);
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          overflow: hidden;
+          padding: 10px;
+          img {
+            width: 40%;
+            height: 120px;
+            object-fit: contain;
+            background-color: var(--bg-200);
+          }
+          a{
+            font-size: 24px;
+            align-self: center;
+            text-wrap: balance;
+            color: var(--text-100);
+            text-decoration: none; /* Opcional, para evitar subrayado por defecto */
+            overflow-wrap: break-word; /* Permite la ruptura de palabras largas */
+            word-break: break-word; /* Asegura que las palabras se rompan si es necesario */
+            hyphens: auto; /* Permite la separación automática de palabras con guiones si el idioma soporta esta funcionalidad */
+
+            &:hover{
+              text-decoration: underline;
+              color: var(--accent-100);
+            }
+          }
+        }
+      }
+    }
   }
 }
 
@@ -373,3 +425,76 @@ footer {
     cursor: pointer;
   }
 }
+
+
+/* Borrador de lo que ya tenía para el aside */
+/*  
+.menu-dropdown {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  min-width: 250px;
+  border: 1px solid #df0c0c;
+  padding: 10px;
+
+  a {
+    display: block;
+    padding: 10px;
+    color: #333;
+    text-decoration: none;
+    background: #e0e0e0;
+    border-bottom: 1px solid #ddd;
+    &:hover{
+      background-color: #dd1212;
+    }
+  }
+  ul {
+    /* max-height: 0;
+    overflow: hidden; */
+    /*li {
+      position: relative;
+      a {
+        display: block;
+        padding: 10px;
+        background: #ccc;
+        color: #333;
+        text-decoration: none;
+        &:hover {
+          background-color: lightcoral;
+        }
+      }
+      ul {
+        display: block;
+        padding: 0;
+        margin: 0;
+        background-color: #ddd;
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 1s ease-out;
+        /* transition: max-height 0.3s ease-out, padding 0.3s ease-out; */
+        /*li {
+          a {
+            color: purple;
+            padding: 10px;
+            background-color: #ddd;
+            /* color: #333; */
+           /* &:hover {
+              background-color: green;
+            }
+          }
+        }
+      }
+      /* Mostrar sub-submenús en hover */
+     /* &:hover > ul {
+        max-height: 500px;
+        padding: 10px 0;
+      }
+    }
+    &:hover > a {
+      max-height: 500px;
+      padding: 10px 0;
+    }
+  }
+}*/
