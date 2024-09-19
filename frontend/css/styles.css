@@ -84,7 +84,7 @@ header {
     margin: 0 30px;
     color: var(--text-100);
 
-    .nav-left {
+    .nav-left a {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -157,10 +157,100 @@ header {
 .principal {
   flex: 1;
   display: flex;
-  /* flex-flow: row wrap; */
 
   /* estilos del aside */
+  .menu-dropdown {
+    /* Estilos generales del menú */
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border: 1px solid var(--accent-200);
+    padding: 10px;
+    position: relative;
+    background-color: var(--bg-200); /* Fondo del contenedor */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera para dar profundidad */
 
+    > a {
+      display: block;
+      padding: 12px 20px; /* Más espacio dentro de los enlaces */
+      color: var(--text-100);
+      background: var(--primary-200);
+      border-bottom: 1px solid var(--primary-100);
+      transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave en el hover */
+      font-weight: bold;
+
+      &:hover {
+        background-color: var(--accent-100);
+        color: var(--primary-300);
+        cursor: pointer; /* Añade el puntero al hacer hover */
+      }
+    }
+
+    .primer-menu {
+      display: none;
+      background-color: var(--bg-300);
+      padding: 10px 0;
+      margin: 0;
+      position: relative;
+      border-radius: 5px; /* Bordes redondeados para suavizar el diseño */
+
+      > li {
+        position: relative;
+
+        > a {
+          display: block;
+          padding: 10px 20px;
+          color: var(--text-100);
+          background: var(--bg-200);
+          border-bottom: 1px solid var(--primary-100);
+          transition: background-color 0.3s ease, color 0.3s ease;
+
+          &:hover {
+            background-color: var(--accent-100);
+            color: var(--primary-300);
+          }
+        }
+
+        .segundo-menu {
+          background-color: var(--bg-100);
+          max-height: 0;
+          overflow: hidden;
+          padding: 0;
+          margin: 0;
+          transition: max-height 0.5s ease-out;
+          position: relative;
+          width: 100%;
+          border-radius: 5px;
+
+          a {
+            display: block;
+            padding: 10px 20px;
+            color: var(--text-200);
+            background: var(--primary-300);
+            border-bottom: 1px solid var(--primary-100);
+            transition: background-color 0.3s ease, color 0.3s ease;
+
+            &:hover {
+              background-color: var(--accent-100);
+              color: var(--primary-300);
+            }
+          }
+        }
+
+        &:hover .segundo-menu,
+        &:hover > .segundo-menu {
+          max-height: 500px;
+          border: 1px solid var(--accent-200); /* Borde cuando se despliega */
+        }
+      }
+    }
+
+    > a:hover + .primer-menu,
+    .primer-menu:hover {
+      display: block;
+    }
+  }
 
   /* estilos del main */
   main {
@@ -327,7 +417,7 @@ header {
       }
     }
     /*  */
-    .categorias{
+    .categorias {
       border: 2px solid red;
       .encabezado {
         display: flex;
@@ -344,12 +434,12 @@ header {
           text-decoration: underline;
         }
       }
-      article{
+      article {
         display: flex;
         flex-wrap: wrap;
         /* padding: 20px; */
         gap: 10px;
-        .tarjeta{
+        .tarjeta {
           flex: 1 1 300px;
           max-width: 300px;
           border: 1px solid var(--primary-300);
@@ -365,7 +455,7 @@ header {
             object-fit: contain;
             background-color: var(--bg-200);
           }
-          a{
+          a {
             font-size: 24px;
             align-self: center;
             text-wrap: balance;
@@ -375,7 +465,7 @@ header {
             word-break: break-word; /* Asegura que las palabras se rompan si es necesario */
             hyphens: auto; /* Permite la separación automática de palabras con guiones si el idioma soporta esta funcionalidad */
 
-            &:hover{
+            &:hover {
               text-decoration: underline;
               color: var(--accent-100);
             }
@@ -425,76 +515,3 @@ footer {
     cursor: pointer;
   }
 }
-
-
-/* Borrador de lo que ya tenía para el aside */
-/*  
-.menu-dropdown {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  min-width: 250px;
-  border: 1px solid #df0c0c;
-  padding: 10px;
-
-  a {
-    display: block;
-    padding: 10px;
-    color: #333;
-    text-decoration: none;
-    background: #e0e0e0;
-    border-bottom: 1px solid #ddd;
-    &:hover{
-      background-color: #dd1212;
-    }
-  }
-  ul {
-    /* max-height: 0;
-    overflow: hidden; */
-    /*li {
-      position: relative;
-      a {
-        display: block;
-        padding: 10px;
-        background: #ccc;
-        color: #333;
-        text-decoration: none;
-        &:hover {
-          background-color: lightcoral;
-        }
-      }
-      ul {
-        display: block;
-        padding: 0;
-        margin: 0;
-        background-color: #ddd;
-        overflow: hidden;
-        max-height: 0;
-        transition: max-height 1s ease-out;
-        /* transition: max-height 0.3s ease-out, padding 0.3s ease-out; */
-        /*li {
-          a {
-            color: purple;
-            padding: 10px;
-            background-color: #ddd;
-            /* color: #333; */
-           /* &:hover {
-              background-color: green;
-            }
-          }
-        }
-      }
-      /* Mostrar sub-submenús en hover */
-     /* &:hover > ul {
-        max-height: 500px;
-        padding: 10px 0;
-      }
-    }
-    &:hover > a {
-      max-height: 500px;
-      padding: 10px 0;
-    }
-  }
-}*/
